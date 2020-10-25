@@ -1,0 +1,3 @@
+venv
+bookswap/.env
+db.sqlite3
