@@ -1,3 +1,4 @@
 venv
 bookswap/.env
 db.sqlite3
+.idea
