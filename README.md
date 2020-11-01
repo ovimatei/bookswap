@@ -3,6 +3,13 @@
 #### This is a project idea for the final module of my SDAcademy course.
 
 
+### Installation:
+
+##### Clone project using ````git clone````
+##### Install requirements ```pip install -r requrements```
+##### Create ```.env``` file at the same level with ```setting.py```
+
+
 ### Project goals:
 - List books added by users
 - Help user swap books between them
