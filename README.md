@@ -7,7 +7,7 @@
 
 ##### Clone project using ````git clone````
 ##### Create virtual env
-##### Install requirements ```pip install -r requirements```
+##### Install requirements `pip install -r requirements`
 ##### Create ```.env``` file at the same level with ```setting.py```
 
 
@@ -17,11 +17,13 @@
 
 ### Main functionalities:
 
-- Main page:
+- Home page:
     - List of books 
     - Search bar 
-    - Registration
-    - Add book if user is logged in
+
+- Login page
+- User profile page(his books, add/delete book)
+- Requests page
     
 - Admin panel:
     - superusers login
