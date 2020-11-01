@@ -5,7 +5,7 @@
 
 ### Installation:
 
-##### Clone project using ````git clone````
+##### Clone project using `git clone https://github.com/ovimatei/bookswap.git`
 ##### Create virtual env
 ##### Install requirements `pip install -r requirements`
 ##### Create ```.env``` file at the same level with ```setting.py```
@@ -23,11 +23,13 @@
 
 - Login page
 - User profile page(his books, add/delete book)
-- Requests page
+- Requests page(request status, accept/reject offer)
     
 - Admin panel:
     - superusers login
     - add categories for books
+    - add books
+    - add authors
     - deletes users
 
 
