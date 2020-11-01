@@ -7,7 +7,7 @@
 
 ##### Clone project using ````git clone````
 ##### Create virtual env
-##### Install requirements ```pip install -r requrements```
+##### Install requirements ```pip install -r requirements```
 ##### Create ```.env``` file at the same level with ```setting.py```
 
 
