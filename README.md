@@ -20,7 +20,8 @@
 - Home page:
     - List of books 
     - Search bar 
-
+    
+- Registration
 - Login page
 - User profile page(his books, add/delete book)
 - Requests page(request status, accept/reject offer)
