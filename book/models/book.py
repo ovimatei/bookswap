@@ -20,7 +20,7 @@ class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     owned_by = models.ManyToManyField(User, through='UserBook')
     image = models.ImageField(upload_to=images_path, default=no_image_path)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category.name, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
