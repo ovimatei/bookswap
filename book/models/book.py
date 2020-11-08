@@ -18,9 +18,10 @@ def no_image_path():
 class Book(models.Model):
     title = models.CharField(max_length=256)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    publisher = models.CharField(max_length=64)
     owned_by = models.ManyToManyField(User, through='UserBook')
-    image = models.ImageField(upload_to=images_path, default=no_image_path)
-    category = models.ForeignKey(Category.name, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='images', default='images/no-image.png')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

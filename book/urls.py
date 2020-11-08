@@ -1,7 +1,8 @@
 from django.urls import path
-
-from book.views import index
+from django.conf import settings
+from django.conf.urls.static import static
+from book.views import home
 
 urlpatterns = [
-    path('', index, name="index")
-]
+                  path('', home, name="home"),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

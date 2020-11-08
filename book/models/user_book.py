@@ -22,3 +22,6 @@ class UserBook(models.Model):
         choices=STATUS,
         default=AVAILABLE,
     )
+
+    def __str__(self):
+        return "{} has {}".format(self.user_id, self.book_id)
