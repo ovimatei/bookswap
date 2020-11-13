@@ -4,25 +4,23 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <div class="container">
-            <h1 id="#test">Hello {{ user.username }}!</h1>
+            <h1>Hello {{ user.username }}!</h1>
             <p><a href="{% url 'logout' %}" class="btn btn-danger">Log Out</a></p>
 
         {% else %}
-        <div class="container">
+
         <p>You are not logged in</p>
         <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
-        </div>
-    {% endif %}
 
-            <h3>Books</h3>
+    {% endif %}
+                 <h3>Books</h3>
             {% for book in books %}
                 <ul>
                     <li><h5>{{ book.title }} by {{ book.author }}</h5></li>
                 </ul>
 
             {% endfor %}
-        </div>
+
 
 
 {% endblock %}

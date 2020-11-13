@@ -24,4 +24,4 @@ class UserBook(models.Model):
     )
 
     def __str__(self):
-        return "{} has {}".format(self.user_id, self.book_id)
+        return "{} owned by {}".format(self.book_id, self.user_id)
