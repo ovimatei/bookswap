@@ -2,6 +2,7 @@ from django.db import models
 import os
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 from .author import Author
 from .category import Category
@@ -22,6 +23,12 @@ class Book(models.Model):
     owned_by = models.ManyToManyField(User, through='UserBook')
     image = models.ImageField(upload_to='images', default='images/no-image.png')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    slug = models.SlugField()
+
+    def get_absolute_url(self):
+        return reverse("book", kwargs={
+            'slug': self.slug
+        })
 
     def __str__(self):
         return self.title

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'components/_nav.html' %}
+    <div class="container">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col">
+                    <h3>Add Book</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <form>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationDefault01">Title</label>
+                        <input type="text" class="form-control" id="validationDefault01" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="validationDefault02">Author</label>
+                        <input type="text" class="form-control" id="validationDefault02" placeholder="First name"
+                               required>
+                        <hr>
+                        <input type="text" class="form-control" id="validationDefault02" placeholder="Last name"
+                               required>
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationDefault03">Publisher</label>
+                        <input type="text" class="form-control" id="validationDefault03" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="validationDefault04">Category</label>
+                        <select class="custom-select" id="validationDefault04" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

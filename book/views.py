@@ -1,10 +1,39 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView
+
 from .models.book import Book
+from .models.user_book import UserBook
 
 
-def home(request):
-    context = {
-        "books": Book.objects.all(),
-    }
+def about(request):
+    return render(request, template_name='about.html')
 
-    return render(request, template_name='home.html', context=context)
+
+def user_profile(request):
+    user_books = UserBook.objects.filter(user_id=request.user.id)
+
+    return render(request, 'profile.html', {"user_books": user_books})
+
+
+class BookListView(ListView):
+    model = Book
+    template_name = 'home.html'
+    context_object_name = 'books'
+
+
+class BookDetailView(DetailView):
+    model = Book
+    template_name = 'book.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(BookDetailView, self).get_context_data(**kwargs)
+        context['owner'] = UserBook.user_id
+        return context
+
+
+class BookAddView(CreateView):
+    model = Book
+    template_name = 'add_book.html'
+    success_url = reverse_lazy('user_profile')
+    fields = "__all__"

@@ -3,24 +3,38 @@
 {% block title %}Bookswap{% endblock %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-            <h1>Hello {{ user.username }}!</h1>
-            <p><a href="{% url 'logout' %}" class="btn btn-danger">Log Out</a></p>
 
-        {% else %}
+    <body>
 
-        <p>You are not logged in</p>
-        <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+    {% include 'components/_nav.html' %}
 
-    {% endif %}
-                 <h3>Books</h3>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="md-form active-pink active-pink-2 mb-3 mt-0">
+                <input class="form-control" type="text" placeholder="Search for title, author" aria-label="Search">
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-4">
+        <div class="row justify-content-between">
             {% for book in books %}
-                <ul>
-                    <li><h5>{{ book.title }} by {{ book.author }}</h5></li>
-                </ul>
 
+                <div class="card p-0" style="width: 18rem;">
+                    <img src="{{ book.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">by {{ book.author }}</h6>
+                        <a href="{{ book.get_absolute_url }}" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
             {% endfor %}
+        </div>
+    </div>
 
 
+    </body>
 
+
+    {% include 'components/_footer.html' %}
 {% endblock %}
