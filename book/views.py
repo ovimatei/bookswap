@@ -26,11 +26,6 @@ class BookDetailView(DetailView):
     model = Book
     template_name = 'book.html'
 
-    def get_context_data(self, **kwargs):
-        context = super(BookDetailView, self).get_context_data(**kwargs)
-        context['owner'] = UserBook.user_id
-        return context
-
 
 class BookAddView(CreateView):
     model = Book
