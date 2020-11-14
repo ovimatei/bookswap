@@ -33,5 +33,7 @@
     - add authors
     - deletes users
 
+### ERD
+![alt text](https://github.com/ovimatei/bookswap/blob/master/bookswap_ERD.png?raw=True)
 
 
